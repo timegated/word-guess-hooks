@@ -1,11 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Word from './components/Word/Word';
+import UserGuess from './components/UserGuess/UserGuess';
 import './App.css';
-
+// Application state should contain the available words? 
 const App = () => {
+  const wordArray = ['word1','word2','word3','word4','word5']
+  const [word, setWord] = useState(wordArray)
+  const randomWord = word[Math.floor(Math.random() * word.length)]
+
+  const handleUserGuess = (event) => {
+    setWord = event.target.value
+  }
   return (
     <div className="App">
-     
+      <Word word={randomWord} />
+      <UserGuess userGuess={setWord}/>
     </div>
   );
 }
