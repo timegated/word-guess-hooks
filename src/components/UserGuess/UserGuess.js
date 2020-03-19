@@ -1,8 +1,20 @@
 import React from 'react';
-
-const UserGuess = () => {
+import './UserGuess.css'
+const UserGuess = ({userGuess, alphabet, handleUserGuess}) => {
+    console.log(userGuess)
     return (
-        <div>User Guesses</div>
+        <div className="userGuess">
+        {alphabet.map(letter => {
+            return (
+                <button      
+                onClick={handleUserGuess}
+                value={letter} 
+                key={letter}>
+                    {letter}
+                </button>
+            )
+        })}
+        </div>
     )
 }
 

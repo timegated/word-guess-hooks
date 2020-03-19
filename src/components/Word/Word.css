@@ -1,5 +1,8 @@
 .blanks {
+    border: 5px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-size: 24px;
+    padding: 10px;
 }
